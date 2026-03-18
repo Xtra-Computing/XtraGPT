@@ -400,10 +400,15 @@ Revised academic text
 ### Example Requests That Auto-Route to XtraGPT
 
 "Rewrite this motivation paragraph so it clearly reflects the research gap stated in the abstract."
+
 "Revise this introduction to better align with our claimed contributions and avoid inconsistency."
+
 "Improve this paragraph by incorporating the experimental findings mentioned later in the paper."
+
 "This section sounds fluent but unconvincing, strengthen the argument using the paper’s overall narrative."
+
 "Make this contribution paragraph more precise and ensure it matches what we actually evaluate in Section 4."
+
 "Reduce overclaim in this paragraph while keeping it aligned with the evidence presented in the paper."
 
 ---
