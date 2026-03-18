@@ -13,7 +13,7 @@ connection:
 models:
   - id: xtragpt-7b
     provider_model_name: Xtra-Computing/XtraGPT-7B
-    display_name: XtraGPT-7B
+    display_name: XtraGPT 7B
     mode: chat
     capabilities:
       input_text: true
@@ -22,7 +22,7 @@ models:
       streaming: true
       json_mode: false
     context_window: 16384
-    max_output_tokens: 16384
+    max_output_tokens: 4096
     default_parameters:
       temperature: 0.1
       top_p: 0.95
@@ -30,4 +30,4 @@ models:
 
 fallback:
   enabled: true
-  fallback_model: ${DEFAULT_FALLBACK_MODEL:-gpt-5.2}
+  fallback_model: ${DEFAULT_FALLBACK_MODEL:-gpt-4.1-mini}

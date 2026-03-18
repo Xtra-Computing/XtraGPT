@@ -2,9 +2,9 @@ version: 1
 router:
   default_model: ${DEFAULT_CHAT_MODEL:-gpt-4.1}
   rules:
-    - id: use-paper-revision-specialist
+    - id: use-xtragpt-paper-revision-skill
       enabled: true
-      description: Route academic editing requests to XtraGPT-backed skill.
+      description: Route academic editing and paper-revision requests to XtraGPT.
       when_all:
         - any_keyword:
             - revise
@@ -31,12 +31,16 @@ router:
             - background
             - related work
             - method
+            - methodology
             - evaluation
             - discussion
             - conclusion
             - limitation
             - rebuttal
             - reviewer response
+            - contribution
+            - manuscript
+            - paper draft
             - paragraph
             - section
             - paper
@@ -53,7 +57,7 @@ router:
             - travel
       action:
         type: invoke_skill
-        skill_id: paper_revision_specialist
+        skill_id: xtragpt-paper-revision-skill
 
     - id: direct-selected-text-edit
       enabled: true
@@ -72,4 +76,4 @@ router:
             - preserve meaning
       action:
         type: invoke_skill
-        skill_id: paper_revision_specialist
+        skill_id: xtragpt-paper-revision-skill

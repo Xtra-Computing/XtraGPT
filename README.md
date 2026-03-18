@@ -9,7 +9,7 @@
 **XtraGPT** is a family of open-source Large Language Models (LLMs) designed specifically for **human-AI collaborative academic paper revision**. Unlike general-purpose models that often perform surface-level polishing, XtraGPT is fine-tuned to **understand the full context** of a research paper and execute specific, **criteria-guided** revision instructions. XtraGPT is the refiner of [Friend Project: PaperDebugger](https://github.com/PaperDebugger/paperdebugger)
 
 The models were trained on a dataset of 140,000 high-quality instruction-revision pairs derived from top-tier conference papers (ICLR).
-XtraGPT is designed to be easily integrated into agent systems, enabling automatic routing of in-context academic revision tasks (e.g., via skills such as `paper_revision_specialist`).
+XtraGPT is designed to be easily integrated into agent systems, enabling automatic routing of in-context academic revision tasks (e.g., via skills such as `xtragpt-paper-revision-skill`).
 
 **Key Features:**
 
@@ -198,8 +198,8 @@ XtraGPT/
 │   └── README.md
 ├── examples/
 │   └── inference_example.py
-├── skills/
-│   └── skill.paper_revision_specialist.yaml
+├── xtragpt-paper-revision-skill/
+│   └── skills/skill.xtragpt-paper-revision-skill.yaml
 ├── requirements.txt
 └── README.md
 ```
@@ -361,6 +361,25 @@ XtraGPT can be used as a **specialized academic writing backend** in agent syste
 
 Unlike general-purpose LLMs, XtraGPT is optimized for **high-precision, context-aware paper revision**, and is best used as a **dedicated revision module** that is automatically invoked when needed.
 
+### Install via NPM
+
+We provide an official OpenClaw integration package:
+
+```bash
+npm install xtragpt-paper-revision-skill
+npx xtragpt-paper-revision-skill init
+````
+
+This will scaffold the required **provider**, **skill**, and **routing rules** into your project.
+
+> ⚠️ Prerequisite: You must first serve a self-hosted OpenAI-compatible XtraGPT endpoint (e.g., via vLLM, SGLang, or Ollama).
+
+After installation, configure your endpoint:
+
+```bash
+export XTRAGPT_BASE_URL=http://127.0.0.1:8088/v1
+export XTRAGPT_API_KEY=dummy
+```
 ---
 
 ### Quick Setup
@@ -369,7 +388,7 @@ To integrate XtraGPT into your system:
 
 1. Serve XtraGPT locally (e.g., via vLLM, SGLang, or Ollama)
 2. Register it as a model provider (OpenAI-compatible endpoint recommended)
-3. Add the `paper_revision_specialist` skill
+3. Add the `xtragpt-paper-revision-skill` skill
 4. Enable routing rules for academic editing
 
 👉 The system will then **automatically dispatch paper revision requests to XtraGPT**, with no special prompting required.
@@ -388,7 +407,7 @@ User request
    ↓
 Agent router detects "revision intent"
    ↓
-paper_revision_specialist skill
+xtragpt-paper-revision-skill skill
    ↓
 XtraGPT
    ↓

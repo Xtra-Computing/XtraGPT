@@ -1,0 +1,41 @@
+{
+  "name": "xtragpt-paper-revision-skill",
+  "version": "0.1.1",
+  "description": "OpenClaw skill pack for self-hosted XtraGPT paper revision",
+  "keywords": [
+    "openclaw",
+    "xtragpt",
+    "paper-revision",
+    "academic-writing",
+    "skill"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuojohnchen/XtraGPT.git"
+  },
+  "homepage": "https://github.com/nuojohnchen/XtraGPT",
+  "bugs": {
+    "url": "https://github.com/nuojohnchen/XtraGPT/issues"
+  },
+  "bin": {
+    "xtragpt-paper-revision-skill": "./bin/xtragpt-paper-revision-skill.js"
+  },
+  "files": [
+    "bin",
+    "providers",
+    "skills",
+    "routers",
+    "templates",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "type": "commonjs"
+}

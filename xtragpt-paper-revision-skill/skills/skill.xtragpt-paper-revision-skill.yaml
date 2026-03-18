@@ -1,7 +1,7 @@
 version: 1
 skill:
-  id: paper_revision_specialist
-  display_name: Paper Revision Specialist
+  id: xtragpt-paper-revision-skill
+  display_name: XtraGPT Paper Revision Skill
   description: >-
     A specialized academic paper revision skill backed by XtraGPT. It is intended
     for revising abstracts, introductions, methods, evaluation sections,
@@ -50,6 +50,8 @@ routing:
       - reviewer response
       - contribution paragraph
       - paper paragraph
+      - manuscript
+      - paper draft
       - section
     constraints:
       - preserve meaning
